@@ -5,7 +5,7 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    public boolean etop,ech,taw;
+    public boolean etop,ech,taw,totbill;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
@@ -59,8 +59,11 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        bill+="Total Price: "+price;
-        return this.bill;
+        if(!totbill){
+            bill+="Total Price: "+price;
+            return this.bill;
+            totbill=true;
+        }
     }
     public void setBill(String s){
         bill+=s;
