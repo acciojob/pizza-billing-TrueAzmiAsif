@@ -61,9 +61,10 @@ public class Pizza {
         // your code goes here
         if(!totbill){
             bill+="Total Price: "+price;
-            return this.bill;
             totbill=true;
+            return this.bill;
         }
+        else return "";
     }
     public void setBill(String s){
         bill+=s;
