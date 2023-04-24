@@ -58,7 +58,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(!totbill){
+        //if(!totbill){
             if(ech){
                 bill+="Extra Cheese Added: 80\n";
             }
@@ -71,8 +71,8 @@ public class Pizza {
             bill+="Total Price: "+price;
             totbill=true;
             return this.bill;
-        }
-        else return "";
+        //}
+        //else return "";
     }
     public void setBill(String s){
         bill+=s;
