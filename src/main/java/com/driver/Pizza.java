@@ -27,7 +27,6 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if(!ech){
-            bill+="Extra Cheese Added: 80\n";
             price+=80;
             ech=true;
         }
@@ -37,11 +36,11 @@ public class Pizza {
         // your code goes here
         if(!etop){
             if(isVeg){
-                bill+="Extra Toppings Added: 70\n";
+                //bill+="Extra Toppings Added: 70\n";
                 price+=70;
             }
             else{
-                bill+="Extra Toppings Added: 120\n";
+                //bill+="Extra Toppings Added: 120\n";
                 price+=120;
             }
             etop=true;
@@ -51,7 +50,7 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if(!taw){
-            bill+="Paperbag Added: 20\n";
+
             price+=20;
             taw=true;
         }
@@ -60,6 +59,15 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         if(!totbill){
+            if(ech){
+                bill+="Extra Cheese Added: 80\n";
+            }
+            if(etop){
+                bill+=isVeg ?"Extra Toppings Added: 70\n":"Extra Toppings Added: 120\n";
+            }
+            if(taw){
+                bill+="Paperbag Added: 20\n";
+            }
             bill+="Total Price: "+price;
             totbill=true;
             return this.bill;
